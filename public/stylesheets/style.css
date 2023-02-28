@@ -36,3 +36,7 @@
   font-family: 'Courier New', Courier, monospace;
   margin: 20px;
 }
+ a {
+  color:#f7f7f7;
+  text-decoration: none;
+}
