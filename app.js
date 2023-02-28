@@ -6,11 +6,12 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var expressHbs = require('express-handlebars');
-
+var mongoose = require('mongoose')
 var app = express();
 
+mongoose.connect('mongodb://127.0.0.1:27017/shopping');
 // view engine setup
-app.engine('.hbs', expressHbs({defaultLayout: 'layouts', extname: '.hbs'}))
+app.engine('.hbs', expressHbs.engine({defaultLayout: 'layouts', extname: '.hbs'}))
 app.set('view engine', '.hbs');
 
 app.use(logger('dev'));
