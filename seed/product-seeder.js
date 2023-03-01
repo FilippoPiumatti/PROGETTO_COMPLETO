@@ -1,5 +1,5 @@
 const { default: mongoose } = require('mongoose');
-var Product = require('../models/product.js');
+var Product = require('../models/product');
 
 var Products =[
     new Product({
@@ -32,10 +32,10 @@ var Products =[
 ];
 var done =0;
 for (let i = 0; i < Products.length; i++) {
-    products[i].save(function (err, result) {
+    Products[i].save(function (err, result) {
         done++;
-        if (done == products.length) {
-            exit(); 
+        if (done == Products.length) {
+            console.log("done!")
         }
     });
     

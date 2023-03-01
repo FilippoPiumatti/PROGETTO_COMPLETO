@@ -1,8 +1,7 @@
-const { Double } = require("mongodb");
-var mongoodr = require("mongoose");
-var schema = mongoodr.Schema;
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
-var schema = new mongoodr.Schema({
+var schema = new Schema({
     imagePath: {type: String, required: true},
     title: {type: String, required: true},
     vote: {type: Number, required: true},
@@ -12,4 +11,4 @@ var schema = new mongoodr.Schema({
     price: {type: String, required: true}
 })
 
-mongoodr.model.exports = mongoodr.model('product',schema);
+module.exports = mongoose.model('product',schema);
